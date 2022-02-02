@@ -112,15 +112,15 @@
       </div>
       <!--buttons-->
       <div class="flex mb-5">
-        <button type="submit" class="nes-btn is-primary mr-5">Fund</button>
+        <button type="submit" class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary mr-5">Fund</button>
         <button
           type="button"
-          class="nes-btn is-error mr-5"
+          class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-error mr-5"
           @click="cancelReward"
         >
           Cancel
         </button>
-        <button type="button" class="nes-btn is-warning" @click="lockReward">
+        <button type="button" class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-warning" @click="lockReward">
           Lock
         </button>
       </div>

@@ -6,7 +6,7 @@
         (toWalletNFTs && toWalletNFTs.length) ||
         (toVaultNFTs && toVaultNFTs.length)
       "
-      class="nes-btn is-primary mr-5"
+      class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary mr-5"
       @click="moveNFTsOnChain"
     >
       Move Gems!
@@ -15,11 +15,11 @@
   </div>
 
   <!--wallet + vault view-->
-  <div class="flex items-stretch">
+  <div class="flex items-stretch text-black font-bold">
     <!--left-->
     <NFTGrid
       title="Your wallet"
-      class="flex-1"
+      class="flex-1 border-black rounded-lg"
       :nfts="desiredWalletNFTs"
       @selected="handleWalletSelected"
     />
@@ -43,7 +43,7 @@
     <NFTGrid
       v-if="bank && vault"
       title="Your vault"
-      class="flex-1"
+      class="flex-1 border-black rounded-lg"
       :nfts="desiredVaultNFTs"
       @selected="handleVaultSelected"
     >

@@ -20,7 +20,7 @@
             (toWalletNFTs && toWalletNFTs.length) ||
             (toVaultNFTs && toVaultNFTs.length)
           "
-          class="nes-btn is-primary mx-5"
+          class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary mx-5"
           @click="moveNFTsOnChain"
         >
           Move Gems!
@@ -58,7 +58,7 @@
       </div>
     </div>
     <div v-else class="flex-1 text-center">
-      <button class="nes-btn is-primary" @click="createVault">
+      <button class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary" @click="createVault">
         Create vault
       </button>
     </div>

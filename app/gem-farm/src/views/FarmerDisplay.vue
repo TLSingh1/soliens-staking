@@ -1,46 +1,39 @@
 <template>
-  <div class="static border-4 rounded-lg with-title mt-10">
-          <h2 class="title text-3xl font-bold tracking-tight p-3 text-white mb-10">
-            Your 
-            <span class="relative inline-block">
-              Staking Account
-            <div class="w-full h-3 -mt-3 bg-teal-200"></div>
-          </span>
-          </h2>
-    <div class="mb-2 text-white font-semibold">
+  <div class="nes-container rounded-md">
+    <p class="title">w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary</p>
+    <div class="mb-2">
       state:
-      <p class="inline-block text-black bg-teal-200">
+      <p class="inline-block bg-yellow-200">
         {{ parseFarmerState(farmerAcc) }}
       </p>
     </div>
-    <div class="mb-2 text-white font-light"><span class="font-semibold">Your identity:</span> {{ farmerAcc.identity.toBase58() }}</div>
-    <div class="mb-2 text-white font-light"><span class="font-semibold">Associated vault:</span> {{ farmerAcc.vault.toBase58() }}</div>
-    <div class="mb-2 text-white font-light"><span class="font-semibold">Gems staked:</span> {{ farmerAcc.gemsStaked }}</div>
-    <div class="mb-2 text-white font-light">
-      <span class="font-semibold">Min staking ends:</span> {{ parseDate(farmerAcc.minStakingEndsTs) }}
+    <div class="mb-2">Your identity: {{ farmerAcc.identity.toBase58() }}</div>
+    <div class="mb-2">Associated vault: {{ farmerAcc.vault.toBase58() }}</div>
+    <div class="mb-2">Gems staked: {{ farmerAcc.gemsStaked }}</div>
+    <div class="mb-2">
+      Min staking ends: {{ parseDate(farmerAcc.minStakingEndsTs) }}
     </div>
-    <div class="mb-5 text-white font-light">
-      <span class="font-semibold">Cooldown ends:</span> {{ parseDate(farmerAcc.cooldownEndsTs) }}
+    <div class="mb-5">
+      Cooldown ends: {{ parseDate(farmerAcc.cooldownEndsTs) }}
     </div>
 
     <div class="flex mb-5">
-      <div class="flex-1 mr-5 text-black font-bold">
+      <div class="flex-1 mr-5">
         <FarmerRewardDisplay
           :key="farmerAcc.rewardA"
           :farmReward="farmAcc.rewardA"
           :reward="farmerAcc.rewardA"
-          title="REWARD"
-          class="border-black rounded-lg"
+          title="Reward A"
         />
       </div>
-      <!--<div class="flex-1">
+      <div class="flex-1">
         <FarmerRewardDisplay
           :key="farmerAcc.rewardB"
           :farmReward="farmAcc.rewardB"
           :reward="farmerAcc.rewardB"
           title="Reward B"
         />
-      </div>-->
+      </div>
     </div>
     <button class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary mb-5" @click="refreshFarmer">
       Refresh account

@@ -38,7 +38,7 @@
       </div>
 
       <div class="mt-2">
-        <button class="nes-btn is-primary">Update</button>
+        <button class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary">Update</button>
       </div>
     </form>
 

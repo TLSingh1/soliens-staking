@@ -1,15 +1,15 @@
 <template>
-  <div class="flex justify-center mb-10">
-    <div class="nes-select is-dark flex-1">
-      <select required id="cluster" v-model="chosenCluster">
+  <div class="flex text-center mb-10 m-3">
+    <div class="is-dark flex-1">
+      <select class="bg-deep-purple-accent-400 w-11/12 h-10 p-1 m-4 mb-0 rounded-md text-white text-center font-bold hover:bg-deep-purple-accent-700" required id="cluster" v-model="chosenCluster">
         <option :value="Cluster.Mainnet">Mainnet</option>
         <option :value="Cluster.Devnet">Devnet</option>
         <option :value="Cluster.Testnet">Testnet</option>
         <option :value="Cluster.Localnet">Localnet</option>
       </select>
     </div>
-    <div class="nes-select is-dark flex-1">
-      <select required id="wallet" v-model="chosenWallet">
+    <div class="is-dark flex-1">
+      <select class="bg-deep-purple-accent-400 w-11/12 h-10 p-1 m-4 mb-0 rounded-md text-white text-center font-bold hover:bg-deep-purple-accent-700" required id="wallet" v-model="chosenWallet">
         <option class="text-gray-500" :value="null">Choose wallet..</option>
         <option :value="WalletName.Phantom">Phantom</option>
         <option :value="WalletName.Sollet">Sollet</option>

@@ -1,24 +1,23 @@
 <template>
   <div class="footer pt-1 pb-1">
     <p class="px-3">Built with</p>
-    <i class="nes-icon heart"></i>
+    <img class="pb-3" src="../../assets/heart.png">
     <p class="px-3">
       by
       <a
         class="nes-text is-primary"
-        href="https://twitter.com/_ilmoi"
+        href="https://twitter.com/SoliensNFT"
         target="_blank"
-        >@_ilmoi</a
+        >@SoliensNFT</a
       >
       | powered by
       <a
         class="nes-text is-primary"
-        href="https://twitter.com/GenesysGo"
+        href="https://github.com/gemworks/gem-farm"
         target="_blank"
-        >GenesysGo</a
+        >GemFarms</a
       >
     </p>
-    <img src="../../assets/gg_logo.png" height="31" width="28" />
   </div>
 </template>
 
@@ -28,9 +27,10 @@ export default {};
 
 <style scoped>
 .footer {
-  @apply w-full flex justify-center align-middle bg-gray-200 text-center;
+  @apply w-full flex justify-center align-middle text-center;
   position: absolute;
   bottom: 0px;
   height: 40px;
+  color: white;
 }
 </style>

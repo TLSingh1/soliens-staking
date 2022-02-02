@@ -14,7 +14,7 @@
         vault owners.
       </p>
       <router-link to="bank">
-        <button class="nes-btn is-primary">Start a bank</button>
+        <button class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary">Start a bank</button>
       </router-link>
     </div>
     <div class="nes-container with-title flex-1 ml-5">
@@ -23,7 +23,7 @@
         Choose this if you'd like to use a vault opened with someone's bank.
       </p>
       <router-link to="vault">
-        <button class="nes-btn is-primary">Use vault</button>
+        <button class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary">Use vault</button>
       </router-link>
     </div>
   </div>

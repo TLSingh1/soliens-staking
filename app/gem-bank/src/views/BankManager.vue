@@ -16,7 +16,7 @@
     </div>
     <!--create a bank if one doesn't exist-->
     <div v-else class="text-center">
-      <button class="nes-btn is-primary" @click="startBank">
+      <button class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary" @click="startBank">
         Start a new bank
       </button>
     </div>
