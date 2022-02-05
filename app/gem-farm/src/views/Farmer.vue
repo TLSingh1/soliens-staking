@@ -11,7 +11,7 @@
     </div>
     <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div class="relative max-w-2xl sm:mx-auto sm:max-w-xl md:max-w-2xl sm:text-center">
-        <h2 class="mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
+        <!--<h2 class="mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
           Enter
           <span class="relative inline-block px-2">
             <div class="absolute inset-0 transform -skew-x-12 bg-teal-accent-400"></div>
@@ -27,7 +27,7 @@
             class="flex-grow w-full h-12 px-4 mb-5 text-white transition duration-200 border-2 border-transparent rounded appearance-none md:mr-2 md:mb-0 bg-deep-purple-900 focus:border-teal-accent-700 focus:outline-none focus:shadow-outline"
             v-model="farm"
           />
-        </form>
+        </form>-->
 
         <div v-if="farmerAcc">
       <FarmerDisplay
@@ -150,8 +150,9 @@ export default defineComponent({
         .sub(farmerAcc.value.rewardB.paidOutReward)
         .toString();
     };
-
+    const solienFarm = "28JPaxN9f6rw2hHS8Ast1EgDh6cK5uQwHzfWfjsAtrPD"
     const fetchFarn = async () => {
+      farm.value = solienFarm
       farmAcc.value = await gf.fetchFarmAcc(new PublicKey(farm.value!));
       console.log(
         `farm found at ${farm.value}:`,

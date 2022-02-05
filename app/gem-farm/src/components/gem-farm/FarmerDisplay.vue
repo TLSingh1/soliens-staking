@@ -1,5 +1,5 @@
 <template>
-  <div class="static border-4 rounded-lg with-title mt-10">
+  <div class="static border-4 rounded-lg with-title mt-0">
           <h2 class="title text-3xl font-bold tracking-tight p-3 text-white mb-10">
             Your 
             <span class="relative inline-block">
