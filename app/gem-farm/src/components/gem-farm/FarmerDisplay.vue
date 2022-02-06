@@ -2,10 +2,14 @@
   <div class="static border-4 rounded-lg with-title mt-0">
           <h2 class="title text-3xl font-bold tracking-tight p-3 text-white mb-10">
             Your 
-            <span class="relative inline-block">
+            <span class="relative inline-block px-2">
+            <div class="absolute inset-0 transform -skew-x-12 bg-teal-accent-400"></div>
+            <span class="relative text-teal-900">Staking Account</span>
+            </span>
+            <!--<span class="relative inline-block">
               Staking Account
             <div class="w-full h-3 -mt-3 bg-teal-200"></div>
-          </span>
+          </span>-->
           </h2>
     <div class="mb-2 text-white font-semibold">
       state:
