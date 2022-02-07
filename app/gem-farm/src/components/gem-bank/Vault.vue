@@ -18,14 +18,14 @@
   <div class="flex items-stretch text-black font-bold">
     <!--left-->
     <NFTGrid
-      title="Your wallet"
-      class="flex-1 border-black rounded-lg"
+      title="Wallet"
+      class="flex-1 border-black border-0 bg-gradient-to-tl from-gray-900 to-black shadow-xl rounded-lg"
       :nfts="desiredWalletNFTs"
       @selected="handleWalletSelected"
     />
 
     <!--mid-->
-    <div class="m-2 flex flex-col">
+    <div class="m-2 flex align-middle h-full flex-col">
       <ArrowButton
         :disabled="vaultLocked"
         class="my-2"
@@ -42,8 +42,8 @@
     <!--right-->
     <NFTGrid
       v-if="bank && vault"
-      title="Your vault"
-      class="flex-1 border-black rounded-lg"
+      title="Vault"
+      class="flex-1 bg-gradient-to-tl from-gray-900 to-black shadow-xl border-0 rounded-lg"
       :nfts="desiredVaultNFTs"
       @selected="handleVaultSelected"
     >

@@ -1,6 +1,6 @@
 <template>
-  <div class="relative h-full min-h-screen bg-gray-900">
-    <TheNavBar />
+  <div class="relative h-full min-h-screen bg-gray-back">
+    <!--<TheNavBar />-->
     <div class="pt-10 px-10 flex justify-center align-middle">
       <p class="text-4xl pt-3 px-1 mt-1 text-white font-bold tracking-widest">SOLIEN</p>
       <img :width="50" :height="50" src="./assets/400x600.gif" />

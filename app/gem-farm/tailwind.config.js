@@ -214,6 +214,8 @@ module.exports = {
           700: '#616161',
           800: '#424242',
           900: '#212121',
+          'back': "#151320",
+          1000: '#1A1A1A'
         },
         'blue-gray': {
           50: '#eceff1',
@@ -367,6 +369,9 @@ module.exports = {
       },
       boxShadow: {
         outline: '0 0 0 3px rgba(101, 31, 255, 0.4)',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--gradient-color-stops))',
       },
     },
   },

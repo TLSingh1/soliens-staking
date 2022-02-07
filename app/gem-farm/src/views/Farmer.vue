@@ -1,14 +1,16 @@
 <template>
+<div class="hr"></div>
+<div class="hrblur"></div>
   <ConfigPane />
   <div v-if="!wallet" class="text-center font-bold text-white">Connect Wallet</div>
   <div v-else>
     <!--farm address-->
-    <div class="relative bg-gradient-to-tl from-teal-200 via-blue-500 to-deep-purple-accent-400">
-    <div class="absolute inset-x-0 bottom-0">
-      <svg viewBox="0 0 224 12" fill="currentColor" class="w-full -mb-1 text-gray-900" preserveAspectRatio="none">
+    <div class="relative ">
+    <!--<div class="absolute inset-x-0 bottom-0">
+      <svg viewBox="0 0 224 12" fill="currentColor" class="w-full -mb-1 text-gray-back" preserveAspectRatio="none">
         <path d="M0,0 C48.8902582,6.27314026 86.2235915,9.40971039 112,9.40971039 C137.776408,9.40971039 175.109742,6.27314026 224,0 L224,12.0441132 L0,12.0441132 L0,0 Z"></path>
       </svg>
-    </div>
+    </div>-->
     <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div class="relative max-w-2xl sm:mx-auto sm:max-w-xl md:max-w-2xl sm:text-center">
         <!--<h2 class="mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
@@ -97,6 +99,8 @@
   </div>
 
 </template>
+
+
 
 <script lang="ts">
 import { defineComponent, nextTick, onMounted, ref, watch } from 'vue';
@@ -289,4 +293,124 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style>
+.hr {
+    
+    width: 100%;
+    height: 3px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-bottom: 0em;
+    padding: 0;
+    border-style: solid;
+    z-index: 2;
+    
+    
+}
+.hr:after {
+  content: "";
+        position: absolute;
+
+        width: 100%;
+        height: 3px;
+        bottom: 50%;
+        left: 0;
+        transition: opacity 0.3s ease, animation 0.3s ease;
+
+        background: linear-gradient(
+            to right, 
+            #62efab 5%, 
+            #F2EA7D 15%, 
+            #F2EA7D 25%, 
+            #FA3F00 35%, 
+            #FA3F00 45%, 
+            #EB1AFA 55%, 
+            #EB1AFA 65%, 
+            #82fff4 75%, 
+            #82fff4 85%, 
+            #62efab 95%);
+
+        background-size: 200%;
+        background-position: 0%;
+        animation: bar 15s linear infinite;
+
+}
+
+.hr:before {
+  content: "";
+        position: absolute;
+
+        width: 100%;
+        height: 3px;
+        bottom: 50%;
+        left: 0;
+        background: linear-gradient( 90deg, #212121 0%);
+        background-size: 15px;
+        background-position: center;
+        z-index: 2;
+}
+
+@keyframes bar {
+    0% { background-position: 0%; }
+    100% { background-position: 200%; }
+}
+
+
+.hrblur {
+    width: 110%;
+    height: 5px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -5%;
+    margin-bottom: 0em;
+    border-style: solid;
+    filter: blur(10px);
+    z-index: 1;
+}
+
+.hrblur:after {
+  content: "";
+        position: absolute;
+
+        width: 110%;
+        height: 5px;
+        bottom: 50%;
+        left: -5%;
+        transition: opacity 0.3s ease, animation 0.3s ease;
+
+        background: linear-gradient(
+            to right, 
+            #62efab 5%, 
+            #F2EA7D 15%, 
+            #F2EA7D 25%, 
+            #FA3F00 35%, 
+            #FA3F00 45%, 
+            #EB1AFA 55%, 
+            #EB1AFA 65%, 
+            #82fff4 75%, 
+            #82fff4 85%, 
+            #62efab 95%);
+
+        background-size: 200%;
+        background-position: 0%;
+        animation: bar 15s linear infinite;
+
+}
+
+.hrblur:before {
+  content: "";
+        position: absolute;
+
+        width: 110%;
+        height: 5px;
+        bottom: 50%;
+        left: -5%;
+        background: linear-gradient( 90deg, #212121 0%);
+        background-size: 15px;
+        background-position: center;
+        z-index: 1;
+}
+</style>
