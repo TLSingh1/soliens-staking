@@ -1,10 +1,12 @@
 <template>
-  <div class="static p-5 shadow-2xl bg-gradient-to-tl from-teal-200 via-blue-500 to-deep-purple-accent-400 rounded-lg with-title mt-0">
-          <h2 class="title text-3xl font-bold tracking-tight p-3 text-white mb-10">
+  <div class="static overflow-hidden p-5 shadow-2xl bg-gradient-to-tl from-teal-200 via-blue-500 to-deep-purple-accent-400 rounded-lg with-title mt-0">
+          <div class="darken overflow-hidden absolute bg-black w-full h-24 inset-0 z-0 opacity-20"></div>
+          <h2 class="title text-3xl font-bold tracking-tight p-3 text-white mb-10 z-10">
             Your 
             <span class="relative inline-block px-2">
-            <div class="absolute inset-0 transform -skew-x-12 bg-teal-accent-400"></div>
-            <span class="relative text-teal-900">Staking Account</span>
+            <div class="absolute inset-0 transform -skew-x-12 hrhighlightblur"></div>
+            <div class="absolute inset-0 transform -skew-x-12 hrhighlight"></div>
+            <span class="relative text-black">Staking Account</span>
             </span>
             <!--<span class="relative inline-block">
               Staking Account
@@ -17,24 +19,24 @@
         {{ parseFarmerState(farmerAcc) }}
       </p>
     </div>
-    <div class="mb-2 text-white font-light"><span class="font-semibold">Your identity:</span> {{ farmerAcc.identity.toBase58() }}</div>
-    <div class="mb-2 text-white font-light"><span class="font-semibold">Associated vault:</span> {{ farmerAcc.vault.toBase58() }}</div>
-    <div class="mb-2 text-white font-light"><span class="font-semibold">Gems staked:</span> {{ farmerAcc.gemsStaked }}</div>
-    <div class="mb-2 text-white font-light">
+    <hr class="solid border-black opacity-20"><div class="my-2 text-white font-light"><span class="font-semibold">Your identity:<br></span> {{ farmerAcc.identity.toBase58() }}</div>
+    <hr class="solid border-black opacity-20"><div class="my-2 text-white font-light"><span class="font-semibold">Associated vault:<br></span> {{ farmerAcc.vault.toBase58() }}</div>
+    <hr class="solid border-black opacity-20"><div class="my-2 text-white font-light"><span class="font-semibold">Gems staked:<br></span> {{ farmerAcc.gemsStaked }}</div>
+    <hr class="solid border-black opacity-20"><div class="my-2 text-white font-light">
       <span class="font-semibold">Min staking ends:</span> {{ parseDate(farmerAcc.minStakingEndsTs) }}
     </div>
-    <div class="mb-5 text-white font-light">
+    <hr class="solid border-black opacity-20"><div class="mb-5 text-white font-light">
       <span class="font-semibold">Cooldown ends:</span> {{ parseDate(farmerAcc.cooldownEndsTs) }}
     </div>
 
     <div class="flex mb-5">
-      <div class="flex-1 mr-5 text-black font-bold">
+      <div class="flex-1 mr-5 text-black font-bold ">
         <FarmerRewardDisplay
           :key="farmerAcc.rewardA"
           :farmReward="farmAcc.rewardA"
           :reward="farmerAcc.rewardA"
-          title="REWARD"
-          class="border-black rounded-lg"
+          title="Reward"
+          class="border-0 bg-reward shadow-lg rounded-lg"
         />
       </div>
       <!--<div class="flex-1">
@@ -46,7 +48,7 @@
         />
       </div>-->
     </div>
-    <button class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary mb-5" @click="refreshFarmer">
+    <button class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-black bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary mb-5" @click="refreshFarmer">
       Refresh account
     </button>
   </div>
@@ -109,4 +111,120 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style>
+.bg-reward {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.hrhighlight {
+    
+    //width: 100%;
+    //height: 50px;
+    display: block;
+    position: relative;
+    left: 0px;
+    top: 0px;
+
+    //margin-bottom: 0em;
+    //padding: 0;
+    //border-style: solid;
+    z-index: 0;    
+}
+.hrhighlight:after {
+  content: "";
+        position: absolute;
+
+        width: 100%;
+        left: 0px;
+        top: -2px;
+        height: 40px;
+
+        transition: opacity 0.3s ease, animation 0.3s ease;
+
+        background: linear-gradient(
+            to right, 
+            #62efab 5%, 
+            #F2EA7D 25%, 
+            #FA3F00 45%, 
+            #EB1AFA 65%, 
+            #82fff4 85%, 
+            #62efab 95%);
+
+        background-size: 200%;
+        background-position: 0%;
+        animation: bar 1.5s linear infinite;
+
+}
+
+.hrhighlight:before {
+  content: "";
+        position: relative;
+
+        width: 100%;
+        //height: 30px;
+        //bottom: 50%;
+        left: -500px;
+        background: linear-gradient( 45deg, #212121 0%);
+        background-size: 15px;
+        background-position: center;
+}
+
+.hrhighlightblur {
+    
+    //width: 100%;
+    //height: 50px;
+    display: block;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    filter: blur(20px);
+
+
+    //margin-bottom: 0em;
+    //padding: 0;
+    //border-style: solid;
+    z-index: 0;    
+}
+.hrhighlightblur:after {
+  content: "";
+        position: absolute;
+
+        width: 100%;
+        left: 0px;
+        top: -2px;
+        height: 40px;
+
+        transition: opacity 0.3s ease, animation 0.3s ease;
+
+        background: linear-gradient(
+            to right, 
+            #62efab 5%, 
+            #F2EA7D 25%, 
+            #FA3F00 45%, 
+            #EB1AFA 65%, 
+            #82fff4 85%, 
+            #62efab 95%);
+
+        background-size: 200%;
+        background-position: 0%;
+        animation: bar 1.5s linear infinite;
+
+}
+
+.hrhighlightblur:before {
+  content: "";
+        position: relative;
+
+        width: 100%;
+        //height: 30px;
+        //bottom: 50%;
+        left: -500px;
+        background: linear-gradient( 45deg, #212121 0%);
+        background-size: 15px;
+        background-position: center;
+}
+
+@keyframes bar {
+    0% { background-position: 0%; }
+    100% { background-position: 200%; }
+}
+</style>

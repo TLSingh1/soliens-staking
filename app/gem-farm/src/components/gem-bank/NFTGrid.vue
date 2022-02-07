@@ -8,7 +8,7 @@
         :key="nft"
         :nft="nft"
         @selected="handleSelected"
-        class="rounded-lg overflow-hidden"
+        class="rounded-lg overflow-hidden z-10"
       />
     </div>
   </div>

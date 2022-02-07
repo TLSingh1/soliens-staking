@@ -19,7 +19,7 @@
     <!--left-->
     <NFTGrid
       title="Wallet"
-      class="flex-1 border-black border-0 bg-gradient-to-tl from-gray-900 to-black shadow-xl rounded-lg"
+      class="flex-1 border-black border-0 bg-reward shadow-xl rounded-lg"
       :nfts="desiredWalletNFTs"
       @selected="handleWalletSelected"
     />
@@ -43,7 +43,7 @@
     <NFTGrid
       v-if="bank && vault"
       title="Vault"
-      class="flex-1 bg-gradient-to-tl from-gray-900 to-black shadow-xl border-0 rounded-lg"
+      class="flex-1 bg-reward shadow-xl border-0 rounded-lg"
       :nfts="desiredVaultNFTs"
       @selected="handleVaultSelected"
     >
@@ -303,6 +303,56 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.vault  {
+  overflow: hidden;
+}
+.vault:before {
+  content: "";
+    height: 200%;
+    width: 500%;
+    position: absolute;
+    background: conic-gradient(
+        #fd004c,
+        #fe9000,
+        #fff020,
+        #3edf4b,
+        #3363ff,
+        #b102b7,
+        #fd004c
+    );
+    left: -200%;
+    top: -50%;
+    animation: spin 1.5s infinite linear;
+    
+}
+
+@keyframes spin{
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+.vault:after{
+    content: "";
+    position: absolute;
+    background-color: #0E0D15;
+    height: 99%;
+    width: 97%;
+    top: 0.5%;
+    left: 1.5%;
+    border-radius: 5px;
+    color: white;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 6px;
+    display: grid;
+    place-items: center;
+    filter: blur(5px)
+
+}
+
+.bg-reward {
+  background-color: rgba(0, 0, 0, 0.3);
+}
 .locked {
   @apply text-center bg-black text-white;
   width: 100%;
