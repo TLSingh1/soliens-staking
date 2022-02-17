@@ -8,7 +8,7 @@
           <label for="authorizeFunder"></label>
           <input id="authorizeFunder" class="nes-input" v-model="toAuthorize" />
         </div>
-        <button class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary mb-5">Authorize</button>
+        <button class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded-xl shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary mb-5">Authorize</button>
       </form>
       <!--DEauthorize-->
       <form class="flex-1" @submit.prevent="deauthorizeFunder">
@@ -20,7 +20,7 @@
             v-model="toDeauthorize"
           />
         </div>
-        <button class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary mb-5">Deauthorize</button>
+        <button class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded-xl shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary mb-5">Deauthorize</button>
       </form>
     </div>
     <!--list of current funders-->

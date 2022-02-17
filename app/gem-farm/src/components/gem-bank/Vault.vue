@@ -6,10 +6,10 @@
         (toWalletNFTs && toWalletNFTs.length) ||
         (toVaultNFTs && toVaultNFTs.length)
       "
-      class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary mr-5"
+      class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded-xl shadow-md md:w-auto hover:text-black bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary mr-5"
       @click="moveNFTsOnChain"
     >
-      Move Gems!
+      Move NFTs!
     </button>
     <slot />
   </div>
@@ -19,7 +19,7 @@
     <!--left-->
     <NFTGrid
       title="Wallet"
-      class="flex-1 border-black border-0 bg-reward shadow-xl rounded-lg"
+      class="flex-1 border-black border-0 bg-reward shadow-xl rounded-xl"
       :nfts="desiredWalletNFTs"
       @selected="handleWalletSelected"
     />
@@ -43,15 +43,18 @@
     <NFTGrid
       v-if="bank && vault"
       title="Vault"
-      class="flex-1 bg-reward shadow-xl border-0 rounded-lg"
+      class="flex-1 shadow-xl relative border-0 bg-reward rounded-xl"
       :nfts="desiredVaultNFTs"
       @selected="handleVaultSelected"
     >
       <div
         v-if="vaultLocked"
-        class="locked flex-col justify-center items-center align-center"
+        class="absolute lockk card vault h-full z-20"
       >
-        <p class="mt-10">This vault is locked!</p>
+        <div class="z-[1000] padlock absolute left-1/4 m-auto w-40 opacity-100">
+          <img class="opacity-90" src="../../assets/padlock.png">
+          <!--<p class="z-40 text text-white absolute l-6/12 t-6/12">This vault is locked!</p>-->
+        </div>     
       </div>
     </NFTGrid>
   </div>
@@ -301,66 +304,5 @@ export default defineComponent({
   },
 });
 </script>
-
-<style scoped>
-.vault  {
-  overflow: hidden;
-}
-.vault:before {
-  content: "";
-    height: 200%;
-    width: 500%;
-    position: absolute;
-    background: conic-gradient(
-        #fd004c,
-        #fe9000,
-        #fff020,
-        #3edf4b,
-        #3363ff,
-        #b102b7,
-        #fd004c
-    );
-    left: -200%;
-    top: -50%;
-    animation: spin 1.5s infinite linear;
-    
-}
-
-@keyframes spin{
-    100%{
-        transform: rotate(-360deg);
-    }
-}
-.vault:after{
-    content: "";
-    position: absolute;
-    background-color: #0E0D15;
-    height: 99%;
-    width: 97%;
-    top: 0.5%;
-    left: 1.5%;
-    border-radius: 5px;
-    color: white;
-    color: #ffffff;
-    font-size: 20px;
-    letter-spacing: 6px;
-    display: grid;
-    place-items: center;
-    filter: blur(5px)
-
-}
-
-.bg-reward {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-.locked {
-  @apply text-center bg-black text-white;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.7;
-  z-index: 10;
-}
+<style>
 </style>

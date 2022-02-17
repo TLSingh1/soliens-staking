@@ -1,6 +1,6 @@
 <template>
   <div class="nes-container with-title">
-    <p class="title">{{ title }}</p>
+    <p class="title rounded-md">{{ title }}</p>
     <slot />
     <div class="flex flex-wrap">
       <NFTCard
@@ -8,7 +8,7 @@
         :key="nft"
         :nft="nft"
         @selected="handleSelected"
-        class="rounded-lg overflow-hidden z-10"
+        class="rounded-xl overflow-hidden z-2 m-auto p-auto mt-3"
       />
     </div>
   </div>

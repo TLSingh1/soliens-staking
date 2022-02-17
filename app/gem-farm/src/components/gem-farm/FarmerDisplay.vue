@@ -1,5 +1,5 @@
 <template>
-  <div class="static overflow-hidden p-5 shadow-2xl bg-gradient-to-tl from-teal-200 via-blue-500 to-deep-purple-accent-400 rounded-lg with-title mt-0">
+  <div class="static overflow-hidden p-5 shadow-2xl bg-gradient-to-tl from-teal-200 via-blue-500 to-deep-purple-accent-400 rounded-xl with-title mt-0">
           <div class="darken overflow-hidden absolute bg-black w-full h-24 inset-0 z-0 opacity-20"></div>
           <h2 class="title text-3xl font-bold tracking-tight p-3 text-white mb-10 z-10">
             Your 
@@ -21,7 +21,7 @@
     </div>
     <hr class="solid border-black opacity-20"><div class="my-2 text-white font-light"><span class="font-semibold">Your identity:<br></span> {{ farmerAcc.identity.toBase58() }}</div>
     <hr class="solid border-black opacity-20"><div class="my-2 text-white font-light"><span class="font-semibold">Associated vault:<br></span> {{ farmerAcc.vault.toBase58() }}</div>
-    <hr class="solid border-black opacity-20"><div class="my-2 text-white font-light"><span class="font-semibold">Gems staked:<br></span> {{ farmerAcc.gemsStaked }}</div>
+    <hr class="solid border-black opacity-20"><div class="my-2 text-white font-light"><span class="font-semibold">NFTs staked:<br></span> {{ farmerAcc.gemsStaked }}</div>
     <hr class="solid border-black opacity-20"><div class="my-2 text-white font-light">
       <span class="font-semibold">Min staking ends:</span> {{ parseDate(farmerAcc.minStakingEndsTs) }}
     </div>
@@ -36,7 +36,7 @@
           :farmReward="farmAcc.rewardA"
           :reward="farmerAcc.rewardA"
           title="Reward"
-          class="border-0 bg-reward shadow-lg rounded-lg"
+          class="border-0 bg-reward shadow-lg rounded-xl"
         />
       </div>
       <!--<div class="flex-1">
@@ -48,7 +48,7 @@
         />
       </div>-->
     </div>
-    <button class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-black bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary mb-5" @click="refreshFarmer">
+    <button class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded-xl shadow-md md:w-auto hover:text-black bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary mb-5" @click="refreshFarmer">
       Refresh account
     </button>
   </div>
@@ -142,16 +142,14 @@ export default defineComponent({
 
         background: linear-gradient(
             to right, 
-            #62efab 5%, 
-            #F2EA7D 25%, 
-            #FA3F00 45%, 
-            #EB1AFA 65%, 
-            #82fff4 85%, 
-            #62efab 95%);
+            #62efab 15%,  
+            #EB1AFA 50%, 
+            #82fff4 75%, 
+            #62efab 80%);
 
-        background-size: 200%;
+        background-size: 800%;
         background-position: 0%;
-        animation: bar 1.5s linear infinite;
+        animation: bar 12s linear infinite;
 
 }
 
@@ -197,16 +195,14 @@ export default defineComponent({
 
         background: linear-gradient(
             to right, 
-            #62efab 5%, 
-            #F2EA7D 25%, 
-            #FA3F00 45%, 
-            #EB1AFA 65%, 
-            #82fff4 85%, 
-            #62efab 95%);
+            #62efab 15%,  
+            #EB1AFA 50%, 
+            #82fff4 75%, 
+            #62efab 80%);
 
-        background-size: 200%;
+        background-size: 800%;
         background-position: 0%;
-        animation: bar 1.5s linear infinite;
+        animation: bar 12s linear infinite;
 
 }
 
@@ -225,6 +221,6 @@ export default defineComponent({
 
 @keyframes bar {
     0% { background-position: 0%; }
-    100% { background-position: 200%; }
+    100% { background-position: 800%; }
 }
 </style>

@@ -15,7 +15,7 @@ const routes: Array<RouteRecordRaw> = [
     component: Manager,
   },
   {
-    path: '/farmer',
+    path: '/staking',
     name: 'Farmer',
     component: Farmer,
   },

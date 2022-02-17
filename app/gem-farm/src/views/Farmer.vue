@@ -1,4 +1,5 @@
 <template>
+<!--<canvas class="webgl"></canvas>-->
 <div class="hr"></div>
 <div class="hrblur"></div>
   <ConfigPane />
@@ -26,7 +27,7 @@
             placeholder="Farm ID"
             required=""
             type="text"
-            class="flex-grow w-full h-12 px-4 mb-5 text-white transition duration-200 border-2 border-transparent rounded appearance-none md:mr-2 md:mb-0 bg-deep-purple-900 focus:border-teal-accent-700 focus:outline-none focus:shadow-outline"
+            class="flex-grow w-full h-12 px-4 mb-5 text-white transition duration-200 border-2 border-transparent rounded-xl appearance-none md:mr-2 md:mb-0 bg-deep-purple-900 focus:border-teal-accent-700 focus:outline-none focus:shadow-outline"
             v-model="farm"
           />
         </form>-->
@@ -49,33 +50,33 @@
       >
         <button
           v-if="farmerState === 'staked' && selectedNFTs.length > 0"
-          class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-black bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary mr-5"
+          class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded-xl shadow-md md:w-auto hover:text-black bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-primary mr-5"
           @click="addGems"
         >
           Add Gems (resets staking)
         </button>
         <button
           v-if="farmerState === 'unstaked'"
-          class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-black bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-success mr-5"
+          class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded-xl shadow-md md:w-auto hover:text-black bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-success mr-5"
           @click="beginStaking"
         >
           Begin staking
         </button>
         <button
           v-if="farmerState === 'staked'"
-          class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-black bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-error mr-5"
+          class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded-xl shadow-md md:w-auto hover:text-black bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-error mr-5"
           @click="endStaking"
         >
           End staking
         </button>
         <button
           v-if="farmerState === 'pendingCooldown'"
-          class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-black bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-error mr-5"
+          class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded-xl shadow-md md:w-auto hover:text-black bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-error mr-5"
           @click="endStaking"
         >
           End cooldown
         </button>
-        <button class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-black bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-warning" @click="claim">
+        <button class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded-xl shadow-md md:w-auto hover:text-black bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary is-warning" @click="claim">
           Claim {{ availableA }} Reward
         </button>
       </Vault>
@@ -85,7 +86,7 @@
         Farmer account not found :( Create a new one?
       </div>
       <div class="w-full text-center">
-        <button class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary" @click="initFarmer">
+        <button class="w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded-xl shadow-md md:w-auto hover:text-black bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none is-primary" @click="initFarmer">
           New Farmer
         </button>
       </div>
@@ -325,11 +326,9 @@ body {
 
         background: linear-gradient(
             to right, 
-            #62efab 5%, 
-            #F2EA7D 15%, 
-            #F2EA7D 25%, 
-            #FA3F00 35%, 
-            #FA3F00 45%, 
+            #62efab 5%,  
+            #552993 25%, 
+            #552993 35%, 
             #EB1AFA 55%, 
             #EB1AFA 65%, 
             #82fff4 75%, 
@@ -387,11 +386,9 @@ body {
 
         background: linear-gradient(
             to right, 
-            #62efab 5%, 
-            #F2EA7D 15%, 
-            #F2EA7D 25%, 
-            #FA3F00 35%, 
-            #FA3F00 45%, 
+            #62efab 5%,  
+            #552993 25%, 
+            #552993 35%, 
             #EB1AFA 55%, 
             #EB1AFA 65%, 
             #82fff4 75%, 
