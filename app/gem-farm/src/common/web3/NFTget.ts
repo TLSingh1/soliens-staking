@@ -38,18 +38,25 @@ async function getNFTMetadata(
   // console.log('Pulling metadata for:', mint);
   try {
     const metadataPDA = await Metadata.getPDA(mint);
-    const onchainMetadata = (await Metadata.load(conn, metadataPDA)).data;
-    const externalMetadata = (await axios.get(onchainMetadata.data.uri)).data;
+    const onchainMetadata: any = (await Metadata.load(conn, metadataPDA)).data;
+    const creator = new PublicKey(onchainMetadata.data.creators[0].address).toBase58();
+    if(creator == "Ak2TGuzxce5HMV6Z6KJR5nKKRUvAt5go8172JQYHgPbb" || 
+    creator == "BenvBiUAP5ZafbmR9ubkQzRA7afLXw3MetVM19vnMyaH" ){
+      const externalMetadata = (await axios.get(onchainMetadata.data.uri)).data;
     return {
       pubkey: pubkey ? new PublicKey(pubkey) : undefined,
       mint: new PublicKey(mint),
       onchainMetadata,
       externalMetadata,
     };
+    }
+    else 
+      return;
   } catch (e) {
-    console.log(`failed to pull metadata for token ${mint}`);
+    console.log('failed to pull metadata for token ${mint}');
   }
 }
+
 
 export async function getNFTMetadataForMany(
   tokens: any[],

@@ -155,7 +155,7 @@ export default defineComponent({
         .sub(farmerAcc.value.rewardB.paidOutReward)
         .toString();
     };
-    const solienFarm = "28JPaxN9f6rw2hHS8Ast1EgDh6cK5uQwHzfWfjsAtrPD"
+    const solienFarm = "Hsdj3ASXeY2XwgE7bVQuVWK8aZajkrBmze2Em82Ui1fV"
     const fetchFarn = async () => {
       farm.value = solienFarm
       farmAcc.value = await gf.fetchFarmAcc(new PublicKey(farm.value!));
